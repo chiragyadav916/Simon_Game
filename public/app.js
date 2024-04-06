@@ -18,18 +18,13 @@ document.addEventListener("keypress", function () {
     }
 });
 
-// Function to start the game on touch event
-function startGame() {
+document.addEventListener("touchstart", function () {
     if (started == false) {
         console.log("Game Started!!");
         started = true;
         levelUp();
     }
-}
-
-// Add event listeners for touchstart and click events
-document.addEventListener("touchstart", startGame);
-document.addEventListener("click", startGame);
+});
 
 function gameFlash(btn) {
     btn.classList.add("flash");
@@ -48,7 +43,7 @@ function levelUp() {
     level++;
     h2.innerText = `Level ${level}`;
 
-    let randIdx = Math.floor(Math.random() * 4); // Fixing the random number generation
+    let randIdx = Math.floor(Math.random() * 3);
     let randColor = btns[randIdx];
     let randBtn = document.querySelector(`.${randColor}`);
     gameSeq.push(randColor);
