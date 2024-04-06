@@ -10,21 +10,15 @@ let hScore = 0;
 let h3 = document.querySelector("h3");
 let h2 = document.querySelector('h2');
 
-document.addEventListener("keypress", function () {
+function startGame() {
     if (started == false) {
         console.log("Game Started!!");
         started = true;
         levelUp();
     }
-});
-
-document.addEventListener("touchstart", function () {
-    if (started == false) {
-        console.log("Game Started!!");
-        started = true;
-        levelUp();
-    }
-});
+}
+document.addEventListener("keypress", startGame);
+document.addEventListener("touchstart", startGame);
 
 function gameFlash(btn) {
     btn.classList.add("flash");
